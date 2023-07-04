@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["https://stock-management-u90k.onrender.com", "https://64a3f242f156b90089e7d996--ubiquitous-donut-731cb3.netlify.app/" ],
+    origin: '*',
     credentials: true,
   })
 );
