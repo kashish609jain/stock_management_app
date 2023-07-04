@@ -17,12 +17,12 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "https://64a443615dd14b00caf057e9--ubiquitous-donut-731cb3.netlify.app"],
-    credentials: true,
-  })
-);
+app.use((req, res, next) => {
+  const origin = https://stock-management-u90k.onrender.com;
+  res.setHeader('Access-Control-Allow-Origin', origin);
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
