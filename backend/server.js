@@ -17,12 +17,29 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use((req, res, next) => {
-  const origin = "https://stock-management-u90k.onrender.com";
-  res.setHeader('Access-Control-Allow-Origin', origin);
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
-});
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://stock-management-u90k.onrender.com/api/users/loggedin', true);
+xhr.withCredentials = true; // Include credentials in the request
+
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    // Request was successful
+    var response = JSON.parse(xhr.responseText);
+    // Process the response data here
+  } else {
+    // Handle error response
+  }
+};
+
+xhr.onerror = function() {
+  // Handle request error
+};
+
+// Set the necessary headers
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://64a43b7612964806d2e15fc9--ubiquitous-donut-731cb3.netlify.app');
+
+xhr.send();
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
