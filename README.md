@@ -10,7 +10,7 @@ npm start
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
-The web application you've described is a comprehensive inventory management system built using the MERN (MongoDB, Express.js, React, Node.js) stack. It offers a variety of features to help users efficiently manage their inventory. Let's break down the details of each component and functionality:
+It is web application built using the MERN (MongoDB, Express.js, React, Node.js) stack. It offers a variety of features to help users efficiently manage their inventory. Let's break down the details of each component and functionality:
 
 1. Frontend Components:
    React: The frontend is built using React, a popular JavaScript library for building user interfaces. React provides a component-based architecture that allows for modular development and reusability.
